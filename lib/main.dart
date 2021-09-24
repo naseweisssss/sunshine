@@ -11,15 +11,18 @@ void main() {
   );
 }
 
-// You need to configure your route on routes.dart and constants.dart
+// You need to configure your route on routes.dart
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       onGenerateRoute: createRoute,
-      initialRoute: homeRoute,
+      initialRoute: mainhomepageRoute,
       theme: ThemeData(
+        fontFamily: "Cairo",
+        scaffoldBackgroundColor: kBackgroundColor,
+        textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor),
         cupertinoOverrideTheme: CupertinoThemeData(
           primaryColor: Colors.red,
         ),
@@ -29,4 +32,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
