@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       onGenerateRoute: createRoute,
-      initialRoute: mapDisplayRoute,
+      initialRoute: homeRoute,
       theme: ThemeData(
         cupertinoOverrideTheme: CupertinoThemeData(
           primaryColor: Colors.red,
@@ -29,3 +29,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
