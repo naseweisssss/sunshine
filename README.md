@@ -4,3 +4,6 @@ A cross-platform application developed with flutter to keep track of solar power
 
 
 ![GitHub Logo](gifandimages/trial.svg)
+
+
+# Screenshots
