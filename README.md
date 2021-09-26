@@ -21,7 +21,7 @@ Connected with local e-commerce platforms, users can compare the prices from dif
 ### Log in Page
 Log in with your Google or Facebook account to keep track of your solar data and sync across mutiple devices!
 
-##Requirements
+## Requirements
 
 - Any Operating System (ie. MacOS X, Linux, Windows)
 - Any IDE with Flutter SDK installed (ie. IntelliJ, Android Studio, VSCode etc)
@@ -44,6 +44,10 @@ Log in with your Google or Facebook account to keep track of your solar data and
 | [**EPub Viewer**](https://pub.dev/packages/epub_viewer) | A flutter plugin for Folioreader to read ePub files |
 
 ## Author(s)
+
+Roger Wong Sie Yang
+Wesley Chiang Yong Jie
+Ryan Lin Xiao Wei
 
 
 
