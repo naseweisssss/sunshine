@@ -45,9 +45,9 @@ Log in with your Google or Facebook account to keep track of your solar data and
 
 ## Author(s)
 
-Roger Wong Sie Yang
-Wesley Chiang Yong Jie
-Ryan Lin Xiao Wei
+-Roger Wong Sie Yang
+-Wesley Chiang Yong Jie
+-Ryan Lin Xiao Wei
 
 
 
