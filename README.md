@@ -21,6 +21,31 @@ Connected with local e-commerce platforms, users can compare the prices from dif
 ### Log in Page
 Log in with your Google or Facebook account to keep track of your solar data and sync across mutiple devices!
 
+##Requirements
+
+- Any Operating System (ie. MacOS X, Linux, Windows)
+- Any IDE with Flutter SDK installed (ie. IntelliJ, Android Studio, VSCode etc)
+- A little knowledge of Dart and Flutter
+
+## Features
+
+- [x] Monitor Solar Data
+- [x] Calculate Solar Output
+- [x] Get recommendation of solar panels 
+
+## Plugins
+
+| Name                                                    | Usage                                               |
+| ------------------------------------------------------- | --------------------------------------------------- |
+| [**Provider**](https://pub.dev/packages/provider)       | State Management                                    |
+| [**Object DB**](https://pub.dev/packages/objectdb)      | NoSQL database to store Favorites & Downloads       |
+| [**XML2JSON**](https://pub.dev/packages/xml2json)       | Convert XML to JSON                                 |
+| [**DIO**](https://pub.dev/packages/dio)                 | Network calls and File Download                     |
+| [**EPub Viewer**](https://pub.dev/packages/epub_viewer) | A flutter plugin for Folioreader to read ePub files |
+
+## Author(s)
+
+
 
 
 
