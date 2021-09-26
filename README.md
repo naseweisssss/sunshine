@@ -3,14 +3,20 @@
 A cross-platform application developed with flutter to keep track of solar power data, calculating electricity output and recommending solar panel 
 
 
-![GitHub Logo](imagesandgifs/1.svg)
+
+<a href="http://www.feedbooks.com/"><img src="imagesandgifs/1.svg" width="500"/></a>
+<br>
+
 
 ## Brief Introduction
-![GitHub Logo](imagesandgifs/2.svg)
+<a href="http://www.feedbooks.com/"><img src="imagesandgifs/2.svg" width="500"/></a>
+<br>
 ## Product Screenshots
-![GitHub Logo](imagesandgifs/3.svg)
+<a href="http://www.feedbooks.com/"><img src="imagesandgifs/3.svg" width="500"/></a>
+<br>
 
-![GitHub Logo](imagesandgifs/4.svg)
+<a href="http://www.feedbooks.com/"><img src="imagesandgifs/4.svg" width="500"/></a>
+<br>
 ### Solar Data Display
 This Historical Data Tracker includes an interactive page to adjust parameters to view the data. Thanks to NASA Power API, we are able to request the latest data for different parameters, so there is no need to update our database frequently
 ### Output Calculator
