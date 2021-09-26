@@ -1,5 +1,9 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sunshine/constants.dart';
+import 'Widgets/category_card.dart';
 
 class mainhomePage extends StatelessWidget {
   const mainhomePage({Key? key}) : super(key: key);
@@ -8,6 +12,34 @@ class mainhomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+        height: 80,
+        color: Colors.white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            BottomNavItem(
+              title: "Today",
+              svgScr: "icons/icons/calendar.svg",
+              press: () {},
+              isActive: false,
+            ),
+            BottomNavItem(
+              title: "Today",
+              svgScr: "icons/icons/calendar.svg",
+              press: () {},
+              isActive: false,
+            ),
+            BottomNavItem(
+              title: "Settings",
+              svgScr: "icons/icons/calendar.svg",
+              press: () {},
+              isActive: true,
+            ),
+          ],
+        ),
+      ),
       body: Stack(
         children: <Widget>[
           Container(
@@ -61,8 +93,58 @@ class mainhomePage extends StatelessWidget {
                     ),
                   ),
                 ),
+                Expanded(
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    childAspectRatio: .85,
+                    children: <Widget>[
+                      CategoryCard(
+                        title: "Promotion of the day",
+                        svgSrc: "icons/icons/Hamburger.svg",
+                        press: () {},
+                      ),
+                      CategoryCard(
+                        title: "Promotion of the day",
+                        svgSrc: "icons/icons/Hamburger.svg",
+                        press: () {},
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class BottomNavItem extends StatelessWidget {
+  final String svgScr;
+  final String title;
+  final VoidCallback press;
+  final bool isActive;
+  const BottomNavItem(
+      {Key? key,
+      required this.svgScr,
+      required this.title,
+      required this.press,
+      required this.isActive})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: press,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          SvgPicture.asset(svgScr,
+              color: isActive ? kActiveIconColor : kTextColor),
+          Text(
+            title,
+            style: TextStyle(color: isActive ? kActiveIconColor : kTextColor),
           ),
         ],
       ),
