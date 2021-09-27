@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sunshine/constants.dart';
 import 'Widgets/category_card.dart';
+import 'Widgets/BottomNavItem.dart';
+import 'setting.dart';
 
 class mainhomePage extends StatelessWidget {
   const mainhomePage({Key? key}) : super(key: key);
@@ -11,6 +13,7 @@ class mainhomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+
     return Scaffold(
       bottomNavigationBar: Container(
         padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
@@ -33,8 +36,13 @@ class mainhomePage extends StatelessWidget {
             ),
             BottomNavItem(
               title: "Settings",
-              svgScr: "icons/icons/calendar.svg",
-              press: () {},
+              svgScr: "icons/icons/Settings.svg",
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AccountScreen()),
+                );
+              },
               isActive: true,
             ),
           ],
@@ -113,38 +121,6 @@ class mainhomePage extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class BottomNavItem extends StatelessWidget {
-  final String svgScr;
-  final String title;
-  final VoidCallback press;
-  final bool isActive;
-  const BottomNavItem(
-      {Key? key,
-      required this.svgScr,
-      required this.title,
-      required this.press,
-      required this.isActive})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: press,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          SvgPicture.asset(svgScr,
-              color: isActive ? kActiveIconColor : kTextColor),
-          Text(
-            title,
-            style: TextStyle(color: isActive ? kActiveIconColor : kTextColor),
           ),
         ],
       ),

@@ -32,6 +32,9 @@ dependencies:
   google_maps_flutter: ^2.0.10
   http: ^0.12.1
   flutter_svg: ^0.22.0
+  flutter_settings_screens: ^0.2.2+1
+  circular_profile_avatar: ^2.0.0
+  google_fonts: ^1.1.2
 
 
 dev_dependencies:
