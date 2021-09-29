@@ -17,16 +17,21 @@ class mainhomePage extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: Container(
         padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-        height: 80,
+        height: 56,
         color: Colors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             BottomNavItem(
               title: "Today",
-              svgScr: "icons/icons/calendar.svg",
-              press: () {},
-              isActive: false,
+              svgScr: "icons/icons/homepage.svg",
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => mainhomePage()),
+                );
+              },
+              isActive: true,
             ),
             BottomNavItem(
               title: "Today",
@@ -43,7 +48,7 @@ class mainhomePage extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => AccountScreen()),
                 );
               },
-              isActive: true,
+              isActive: false,
             ),
           ],
         ),
@@ -101,22 +106,37 @@ class mainhomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Expanded(
-                  child: GridView.count(
-                    crossAxisCount: 2,
-                    childAspectRatio: .85,
-                    children: <Widget>[
-                      CategoryCard(
-                        title: "Promotion of the day",
-                        svgSrc: "icons/icons/Hamburger.svg",
-                        press: () {},
-                      ),
-                      CategoryCard(
-                        title: "Promotion of the day",
-                        svgSrc: "icons/icons/Hamburger.svg",
-                        press: () {},
-                      ),
-                    ],
+                ConstrainedBox(
+                  constraints: BoxConstraints(
+                    maxHeight: 245,
+                  ),
+                  child: Expanded(
+                    child: GridView.count(
+                      crossAxisCount: 2,
+                      childAspectRatio: .85,
+                      children: <Widget>[
+                        CategoryCard(
+                          title: "Promotion of the day",
+                          svgSrc: "icons/icons/Hamburger.svg",
+                          press: () {},
+                        ),
+                        CategoryCard(
+                          title: "Promotion of the day",
+                          svgSrc: "icons/icons/Hamburger.svg",
+                          press: () {},
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.fromLTRB(20.0, 0, 0, 0),
+                  child: Text(
+                    "Solar Panel",
+                    style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                        fontWeight: FontWeight.w900,
+                        fontSize: 20,
+                        color: Colors.black),
                   ),
                 ),
               ],

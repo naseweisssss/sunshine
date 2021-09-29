@@ -23,6 +23,8 @@ class BottomNavItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           SvgPicture.asset(svgScr,
+              height: 20,
+              width: 20,
               color: isActive ? kActiveIconColor : kTextColor),
           Text(
             title,

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sunshine/screen/mainhomePage/mainhomePage.dart';
 import 'editprofile.dart';
 import 'Widgets/BottomNavItem.dart';
 
@@ -43,7 +44,7 @@ class _SettingsTwoPageState extends State<SettingsTwoPage> {
       ),
       bottomNavigationBar: Container(
         padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-        height: 80,
+        height: 56,
         color: Colors.grey[200],
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -51,7 +52,12 @@ class _SettingsTwoPageState extends State<SettingsTwoPage> {
             BottomNavItem(
               title: "Today",
               svgScr: "icons/icons/calendar.svg",
-              press: () {},
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => mainhomePage()),
+                );
+              },
               isActive: false,
             ),
             BottomNavItem(
