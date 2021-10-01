@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sunshine/constants.dart';
+import 'package:sunshine/screen/dashboard/map_display.dart';
 import 'Widgets/category_card.dart';
 import 'Widgets/BottomNavItem.dart';
 import 'setting.dart';
@@ -32,6 +33,17 @@ class mainhomePage extends StatelessWidget {
                 );
               },
               isActive: true,
+            ),
+            BottomNavItem(
+              title: "Map",
+              svgScr: "icons/icons/map.svg",
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MapDisplay()),
+                );
+              },
+              isActive: false,
             ),
             BottomNavItem(
               title: "Today",

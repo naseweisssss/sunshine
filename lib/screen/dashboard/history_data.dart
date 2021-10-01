@@ -1,35 +1,55 @@
-import 'package:flutter/material.dart';
-import 'package:sunshine/screen/models/climatology.dart';
-import 'dart:async';
-import 'package:sunshine/screen/models/response.dart' as data;
+import 'dart:convert';
 
-class SummaryScreen extends StatefulWidget {
+import 'package:flutter/material.dart';
+import 'dart:async';
+import 'package:http/http.dart' as http;
+import 'package:sunshine/screen/models/climatology2.dart';
+import 'package:sunshine/screen/models/response.dart';
+
+class HistoryData extends StatefulWidget {
   @override
   _HistoryDataState createState() => _HistoryDataState();
 }
 
 class _HistoryDataState extends State<HistoryData> {
-  Future<Map<String, dynamic>> _futureData;
 
-  late List<Climatology> climatology;
+  late Future<Parameter> _futureParameter;
 
   @override
   void initState() {
     super.initState();
-    _futureData = data.fetchData(
-        'https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=QV2M,WS10M,WS2M,TS,ALLSKY_SFC_SW_DWN,CLRSKY_SFC_SW_DWN,CLOUD_AMT,ALLSKY_SFC_UV_INDEX,ALLSKY_SFC_UVB,ALLSKY_SFC_UVA,ALLSKY_NKT,ALLSKY_SFC_SW_DIFF&community=RE&longitude=111.8305&latitude=2.2873&format=JSON&start=2019&end=2020');
+    _futureParameter = fetchData('https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=QV2M,WS2M,TS,CLOUD_AMT&community=RE&longitude=111.8305&latitude=2.2873&format=JSON&start=2019&end=2020');
   }
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<Map<String, dynamic>>(
-        future: _futureData,
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            climatology = snapshot.data!['climatology'];
-            return _buildMainScreen();
-          }
-          return _buildFetchingDataScreen();
-        });
+    return MaterialApp(
+      title: 'Fetch Data Example',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Fetch Data Example'),
+        ),
+        body: Center(
+          child: FutureBuilder<Parameter>(
+            future: _futureParameter,
+            builder: (context,  AsyncSnapshot<Parameter> snapshot) {
+              if (snapshot.hasError) {
+                return Text('${snapshot.error}');
+              }
+              if (snapshot.hasData) {
+
+              } else if (snapshot.hasError) {
+                return Text('${snapshot.error}');
+              }
+              // By default, show a loading spinner.
+              return const CircularProgressIndicator();
+            },
+          ),
+        ),
+      ),
+    );
   }
 }

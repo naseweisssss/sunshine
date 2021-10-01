@@ -1,10 +1,14 @@
 import 'dart:ffi';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'dart:async';
 
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:sunshine/screen/mainhomePage/Widgets/BottomNavItem.dart';
+import 'package:sunshine/screen/mainhomePage/mainhomePage.dart';
+import 'package:sunshine/screen/mainhomePage/setting.dart';
 
 
 class MapDisplay extends StatefulWidget {
@@ -55,25 +59,139 @@ class _MapDisplayState extends State<MapDisplay> {
   );
 
   @override
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Location Maps'),
+        iconTheme: IconThemeData(
+          color: CupertinoColors.black,
+        ),
+        title: const Text(
+          'Map Location',
+          style: TextStyle(color: Colors.black),
+        ),
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        backgroundColor: Color(0xFFF5CEB8),
       ),
-      body: Center(
-        child: Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-          child:GoogleMap(
-          mapType: MapType.hybrid,
-          initialCameraPosition: _sibulocation,
-          onMapCreated: (GoogleMapController controller) {
-            _controller.complete(controller);
-          },
-            markers: Set.from(allMarkers),
+      bottomNavigationBar: Container(
+        padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+        height: 56,
+        color: Colors.white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            BottomNavItem(
+              title: "Today",
+              svgScr: "icons/icons/homepage.svg",
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => mainhomePage()),
+                );
+              },
+              isActive: false,
+            ),
+            BottomNavItem(
+              title: "Map",
+              svgScr: "icons/icons/map.svg",
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MapDisplay()),
+                );
+              },
+              isActive: true,
+            ),
+            BottomNavItem(
+              title: "Today",
+              svgScr: "icons/icons/calendar.svg",
+              press: () {},
+              isActive: false,
+            ),
+            BottomNavItem(
+              title: "Settings",
+              svgScr: "icons/icons/Settings.svg",
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AccountScreen()),
+                );
+              },
+              isActive: false,
+            ),
+          ],
+        ),
       ),
+      body: Stack(
+        children: <Widget>[
+          // Replace this container with your Map widget
+          Container(
+              height: MediaQuery.of(context).size.height,
+              width: MediaQuery.of(context).size.width,
+              child:GoogleMap(
+                mapType: MapType.hybrid,
+                initialCameraPosition: _sibulocation,
+                onMapCreated: (GoogleMapController controller) {
+                  _controller.complete(controller);
+                },
+                markers: Set.from(allMarkers),
+              ),
+            ),
+          Positioned(
+            top: 10,
+            right: 15,
+            left: 15,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius:  BorderRadius.circular(32),
+              ),
+              child: Row(
+                children: <Widget>[
+                  IconButton(
+                    splashColor: Colors.grey,
+                    icon: Icon(Icons.menu),
+                    onPressed: () {},
+                  ),
+                  Expanded(
+                    child: TextField(
+                      cursorColor: Colors.black,
+                      keyboardType: TextInputType.text,
+                      textInputAction: TextInputAction.go,
+                      decoration: InputDecoration(
+                          border: InputBorder.none,
+                          contentPadding:
+                          EdgeInsets.symmetric(horizontal: 15),
+                          hintText: "Search..."),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          Positioned(
+            bottom: 8,
+            right: 220,
+            left: 7,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+              ),
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Text('Latitude: 2.2873  Longitude: 111.8305',
+                      style: TextStyle(fontSize: 18),
+                    )
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
       ),
-    ),);
+    );
   }
 }
 

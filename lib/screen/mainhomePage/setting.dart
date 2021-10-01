@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sunshine/screen/dashboard/map_display.dart';
 import 'package:sunshine/screen/mainhomePage/mainhomePage.dart';
 import 'editprofile.dart';
 import 'Widgets/BottomNavItem.dart';
@@ -51,11 +52,22 @@ class _SettingsTwoPageState extends State<SettingsTwoPage> {
           children: [
             BottomNavItem(
               title: "Today",
-              svgScr: "icons/icons/calendar.svg",
+              svgScr: "icons/icons/homepage.svg",
               press: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => mainhomePage()),
+                );
+              },
+              isActive: false,
+            ),
+            BottomNavItem(
+              title: "Map",
+              svgScr: "icons/icons/map.svg",
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MapDisplay()),
                 );
               },
               isActive: false,
