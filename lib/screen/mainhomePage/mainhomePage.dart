@@ -1,16 +1,13 @@
-import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:sunshine/constants.dart';
 import 'package:sunshine/data/data.dart';
-import 'package:sunshine/screen/authentication/home.dart';
 import 'package:sunshine/screen/mainhomePage/solar_card.dart';
 import 'Widgets/category_card.dart';
 import 'Widgets/BottomNavItem.dart';
 import 'setting.dart';
+import 'Widgets/product_card.dart';
 
 class mainhomePage extends StatelessWidget {
   const mainhomePage({Key? key}) : super(key: key);
@@ -40,7 +37,7 @@ class mainhomePage extends StatelessWidget {
             ),
             BottomNavItem(
               title: "Display",
-              svgScr: "icons/icons/calendar.svg",
+              svgScr: "icons/icons/laptop.svg",
               press: () {},
               isActive: false,
             ),
@@ -113,9 +110,9 @@ class mainhomePage extends StatelessWidget {
                 ),
                 ConstrainedBox(
                   constraints: BoxConstraints(
-                    maxHeight: 250,
+                    maxHeight: 260,
                   ),
-                  child: Expanded(
+                  child: Container(
                     child: GridView.count(
                       crossAxisCount: 2,
                       childAspectRatio: .85,
@@ -134,37 +131,70 @@ class mainhomePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  padding: EdgeInsets.fromLTRB(20.0, 0, 0, 0),
-                  child: Text(
-                    "Solar Panel Recommendation",
-                    style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                        fontWeight: FontWeight.w900,
-                        fontSize: 20,
-                        color: Colors.blueGrey.shade700),
+                SizedBox(
+                  child: Divider(
+                    color: Colors.black,
+                    indent: 20,
+                    endIndent: 20,
+                  ),
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(22.0, 0, 22.0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        child: Text(
+                          "Solar Panel Recommendation",
+                          style: Theme.of(context)
+                              .textTheme
+                              .subtitle1!
+                              .copyWith(
+                                  fontWeight: FontWeight.w900,
+                                  fontSize: 18,
+                                  color: Colors.black),
+                        ),
+                      ),
+                      Text(
+                        "See more",
+                        style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 15,
+                              color: Colors.blue.shade500,
+                              decoration: TextDecoration.underline,
+                            ),
+                      ),
+                    ],
                   ),
                 ),
                 ConstrainedBox(
-                    constraints: BoxConstraints(
-                      maxHeight: 250,
-                    ),
-                    child: Expanded(
-                      child: GridView.count(
-                          crossAxisCount: 1,
-                          childAspectRatio: 2,
-                          children: <Widget>[
-                            CategoryCard(
-                              title: "Map Searching",
-                              svgSrc: "icons/icons/map.svg",
-                              press: () {},
-                            ),
-                            CategoryCard(
-                              title: "Map Searching",
-                              svgSrc: "icons/icons/map.svg",
-                              press: () {},
-                            ),
-                          ]),
-                    ))
+                  constraints: BoxConstraints(
+                    maxHeight: 400,
+                  ),
+                  child: Column(
+                    children: <Widget>[
+                      ProductCard(
+                        image: 'images/Solarpanel1.png',
+                        title:
+                            'Fenteer 300 Watt 2 in 1\nSolar Panel Starter\n\nRM320',
+                        press: () {},
+                      ),
+                      ProductCard(
+                        image: 'images/solarpanel2.png',
+                        title:
+                            'Fenteer 300 Watt 2 in 1\nSolar Panel Starter\n\nRM450',
+                        press: () {},
+                      ),
+                      ProductCard(
+                        image: 'images/solarpanel3.png',
+                        title:
+                            'Fenteer 300 Watt 2 in 1\nSolar Panel Starter\n\nRM360',
+                        press: () {},
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           ),
