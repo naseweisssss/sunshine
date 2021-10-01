@@ -61,8 +61,8 @@ class _SettingsTwoPageState extends State<SettingsTwoPage> {
               isActive: false,
             ),
             BottomNavItem(
-              title: "Today",
-              svgScr: "icons/icons/calendar.svg",
+              title: "Display",
+              svgScr: "icons/icons/laptop.svg",
               press: () {},
               isActive: false,
             ),
