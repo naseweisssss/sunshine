@@ -50,8 +50,8 @@ class _SettingsTwoPageState extends State<SettingsTwoPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             BottomNavItem(
-              title: "Today",
-              svgScr: "icons/icons/calendar.svg",
+              title: "Home",
+              svgScr: "icons/icons/homepage.svg",
               press: () {
                 Navigator.push(
                   context,

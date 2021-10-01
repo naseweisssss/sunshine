@@ -1,8 +1,13 @@
+import 'dart:convert';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sunshine/constants.dart';
+import 'package:sunshine/data/data.dart';
+import 'package:sunshine/screen/authentication/home.dart';
+import 'package:sunshine/screen/mainhomePage/solar_card.dart';
 import 'Widgets/category_card.dart';
 import 'Widgets/BottomNavItem.dart';
 import 'setting.dart';
@@ -23,7 +28,7 @@ class mainhomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             BottomNavItem(
-              title: "Today",
+              title: "Home",
               svgScr: "icons/icons/homepage.svg",
               press: () {
                 Navigator.push(
@@ -34,7 +39,7 @@ class mainhomePage extends StatelessWidget {
               isActive: true,
             ),
             BottomNavItem(
-              title: "Today",
+              title: "Display",
               svgScr: "icons/icons/calendar.svg",
               press: () {},
               isActive: false,
@@ -65,7 +70,7 @@ class mainhomePage extends StatelessWidget {
               ),
             ),
           ),
-          SafeArea(
+          SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -108,7 +113,7 @@ class mainhomePage extends StatelessWidget {
                 ),
                 ConstrainedBox(
                   constraints: BoxConstraints(
-                    maxHeight: 245,
+                    maxHeight: 250,
                   ),
                   child: Expanded(
                     child: GridView.count(
@@ -116,13 +121,13 @@ class mainhomePage extends StatelessWidget {
                       childAspectRatio: .85,
                       children: <Widget>[
                         CategoryCard(
-                          title: "Promotion of the day",
-                          svgSrc: "icons/icons/Hamburger.svg",
+                          title: "Map Searching",
+                          svgSrc: "icons/icons/map.svg",
                           press: () {},
                         ),
                         CategoryCard(
-                          title: "Promotion of the day",
-                          svgSrc: "icons/icons/Hamburger.svg",
+                          title: "Solar Calculator",
+                          svgSrc: "icons/icons/calculator.svg",
                           press: () {},
                         ),
                       ],
@@ -132,18 +137,47 @@ class mainhomePage extends StatelessWidget {
                 Container(
                   padding: EdgeInsets.fromLTRB(20.0, 0, 0, 0),
                   child: Text(
-                    "Solar Panel",
+                    "Solar Panel Recommendation",
                     style: Theme.of(context).textTheme.subtitle1!.copyWith(
                         fontWeight: FontWeight.w900,
                         fontSize: 20,
-                        color: Colors.black),
+                        color: Colors.blueGrey.shade700),
                   ),
                 ),
+                ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxHeight: 250,
+                    ),
+                    child: Expanded(
+                      child: GridView.count(
+                          crossAxisCount: 1,
+                          childAspectRatio: 2,
+                          children: <Widget>[
+                            CategoryCard(
+                              title: "Map Searching",
+                              svgSrc: "icons/icons/map.svg",
+                              press: () {},
+                            ),
+                            CategoryCard(
+                              title: "Map Searching",
+                              svgSrc: "icons/icons/map.svg",
+                              press: () {},
+                            ),
+                          ]),
+                    ))
               ],
             ),
           ),
         ],
       ),
     );
+  }
+
+  Widget _buildSolarListView() {
+    return ListView.builder(
+        itemCount: solarData.length,
+        itemBuilder: (context, index) {
+          return SolarCard(solar: solarData[index]);
+        });
   }
 }

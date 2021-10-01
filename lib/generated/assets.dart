@@ -6,6 +6,9 @@ class Assets {
   static const String imagesLoginbackground = 'images/loginbackground.png';
   static const String imagesLogo = 'images/logo.png';
   static const String imagesMeditationBg = 'images/meditation_bg.png';
+  static const String imagesSolarpanel1 = 'images/Solarpanel1.png';
+  static const String imagesSolarpanel2 = 'images/solarpanel2.png';
+  static const String imagesSolarpanel3 = 'images/solarpanel3.png';
   static const String imagesSunshine = 'images/sunshine.png';
   static const String imagesUndrawPilatesGpdb =
       'images/undraw_pilates_gpdb.png';
