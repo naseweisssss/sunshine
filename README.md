@@ -57,11 +57,11 @@ Connected with local e-commerce platforms, users can compare the prices from dif
 - [x] Calculate Solar Output
 - [x] Get recommendation of solar panels 
 
-## Plugins
+## Tools
 
 | Name                                                    | Usage                                               |
 | ------------------------------------------------------- | --------------------------------------------------- |
-| [**Provider**](https://pub.dev/packages/provider)       | State Management                                    |
+| [**FLutter**](https://flutter.dev/)                     | Crafting natively compiled applications             |
 | [**Object DB**](https://pub.dev/packages/objectdb)      | NoSQL database to store Favorites & Downloads       |
 | [**XML2JSON**](https://pub.dev/packages/xml2json)       | Convert XML to JSON                                 |
 | [**DIO**](https://pub.dev/packages/dio)                 | Network calls and File Download                     |
