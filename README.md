@@ -6,6 +6,7 @@ A cross-platform application developed with flutter to keep track of solar power
 <a href="http://www.feedbooks.com/"><img src="images/SUnSHine.svg" width="200"/></a>
 <br>
 
+## Brief Introduction
 <a href="http://www.feedbooks.com/"><img src="imagesandgifs/1.svg" width="500"/></a>
 <br>
 
