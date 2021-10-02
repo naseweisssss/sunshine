@@ -19,9 +19,16 @@ A cross-platform application developed with flutter to keep track of solar power
 ### Log in Page
 <a href="http://www.feedbooks.com/"><img src="images/Loginpage.svg" width="500"/></a>
 <br>
+Log in with your Google or Facebook account to keep track of your solar data and sync across mutiple devices!
 ### Location Service (with Google Map!)
 <a href="http://www.feedbooks.com/"><img src="images/location.gif" width="500"/></a>
 <br>
+
+### Main Home Page
+<a href="http://www.feedbooks.com/"><img src="images/mainhomepage.gif" width="500"/></a>
+<br>
+
+
 
 ## Features
 <a href="http://www.feedbooks.com/"><img src="images/3phones.gif" width="500"/></a>
@@ -35,8 +42,6 @@ This novel Solar power output calculator helps our homeowners to gauge and get a
 Connected with local e-commerce platforms, users can compare the prices from different merchants and even get recommendations from our ends. <br /><br/><br/>
 <img src="imagesandgifs/5.svg" width="500"/></a>
 
-### Log in Page
-Log in with your Google or Facebook account to keep track of your solar data and sync across mutiple devices!
 
 ## Requirements
 
