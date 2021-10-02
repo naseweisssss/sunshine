@@ -2,6 +2,9 @@
 
 A cross-platform application developed with flutter to keep track of solar power data, calculating electricity output and recommending solar panel 
 
+## Appreciation
+Special Thanks to NASA Power API for supplying the data and making this possible!
+
 ## Icon
 <a href="http://www.feedbooks.com/"><img src="images/SUnSHine.svg" width="200"/></a>
 <br>
@@ -71,6 +74,8 @@ Connected with local e-commerce platforms, users can compare the prices from dif
 -Roger Wong Sie Yang<br />
 -Wesley Chiang Yong Jie<br />
 -Ryan Lin Xiao Wei<br />
+
+
 
 
 
