@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:circular_profile_avatar/circular_profile_avatar.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sunshine/constants.dart';
+import 'package:sunshine/screen/dashboard/history_data2.dart';
 import 'package:sunshine/screen/dashboard/map_display.dart';
 import 'package:sunshine/screen/mainhomePage/mainhomePage.dart';
 import 'editprofile.dart';
@@ -40,6 +42,7 @@ class _SettingsTwoPageState extends State<SettingsTwoPage> {
           'Setting',
           style: TextStyle(color: Colors.black),
         ),
+        automaticallyImplyLeading: false,
         centerTitle: true,
         backgroundColor: Color(0xFFF5CEB8),
       ),
@@ -57,6 +60,17 @@ class _SettingsTwoPageState extends State<SettingsTwoPage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => mainhomePage()),
+                );
+              },
+              isActive: false,
+            ),
+            BottomNavItem(
+              title: "Data",
+              svgScr: "icons/icons/history.svg",
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HistoryData2()),
                 );
               },
               isActive: false,

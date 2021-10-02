@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sunshine/constants.dart';
+import 'package:sunshine/screen/dashboard/history_data2.dart';
 import 'package:sunshine/screen/dashboard/map_display.dart';
 import 'Widgets/category_card.dart';
 import 'Widgets/BottomNavItem.dart';
@@ -33,6 +34,17 @@ class mainhomePage extends StatelessWidget {
                 );
               },
               isActive: true,
+            ),
+            BottomNavItem(
+              title: "Data",
+              svgScr: "icons/icons/history.svg",
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HistoryData2()),
+                );
+              },
+              isActive: false,
             ),
             BottomNavItem(
               title: "Map",

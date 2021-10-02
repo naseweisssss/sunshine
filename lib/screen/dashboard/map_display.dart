@@ -10,6 +10,8 @@ import 'package:sunshine/screen/mainhomePage/Widgets/BottomNavItem.dart';
 import 'package:sunshine/screen/mainhomePage/mainhomePage.dart';
 import 'package:sunshine/screen/mainhomePage/setting.dart';
 
+import 'history_data2.dart';
+
 
 class MapDisplay extends StatefulWidget {
   @override
@@ -88,6 +90,17 @@ class _MapDisplayState extends State<MapDisplay> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => mainhomePage()),
+                );
+              },
+              isActive: false,
+            ),
+            BottomNavItem(
+              title: "Data",
+              svgScr: "icons/icons/history.svg",
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HistoryData2()),
                 );
               },
               isActive: false,
