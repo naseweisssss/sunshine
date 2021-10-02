@@ -12,14 +12,12 @@ import 'package:sunshine/screen/mainhomePage/setting.dart';
 
 import 'history_data2.dart';
 
-
 class MapDisplay extends StatefulWidget {
   @override
   _MapDisplayState createState() => _MapDisplayState();
 }
 
 class _MapDisplayState extends State<MapDisplay> {
-
   late String latitude;
   late String longitude;
   List<Marker> allMarkers = [];
@@ -31,11 +29,10 @@ class _MapDisplayState extends State<MapDisplay> {
     allMarkers.add(Marker(
         markerId: MarkerId('myMarker'),
         draggable: false,
-        onTap: (){
+        onTap: () {
           print('Marker Tapped');
-          },
-        position: LatLng(2.2873, 111.8305)
-    ));
+        },
+        position: LatLng(2.2873, 111.8305)));
   }
 
   // function for getting the current location
@@ -61,12 +58,20 @@ class _MapDisplayState extends State<MapDisplay> {
   );
 
   @override
-
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(
           color: CupertinoColors.black,
+        ),
+        leading: IconButton(
+          icon: Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
         title: const Text(
           'Map Location',
@@ -76,81 +81,21 @@ class _MapDisplayState extends State<MapDisplay> {
         centerTitle: true,
         backgroundColor: Color(0xFFF5CEB8),
       ),
-      bottomNavigationBar: Container(
-        padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-        height: 56,
-        color: Colors.white,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            BottomNavItem(
-              title: "Today",
-              svgScr: "icons/icons/homepage.svg",
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => mainhomePage()),
-                );
-              },
-              isActive: false,
-            ),
-            BottomNavItem(
-              title: "Data",
-              svgScr: "icons/icons/history.svg",
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HistoryData2()),
-                );
-              },
-              isActive: false,
-            ),
-            BottomNavItem(
-              title: "Map",
-              svgScr: "icons/icons/map.svg",
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MapDisplay()),
-                );
-              },
-              isActive: true,
-            ),
-            BottomNavItem(
-              title: "Today",
-              svgScr: "icons/icons/calendar.svg",
-              press: () {},
-              isActive: false,
-            ),
-            BottomNavItem(
-              title: "Settings",
-              svgScr: "icons/icons/Settings.svg",
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => AccountScreen()),
-                );
-              },
-              isActive: false,
-            ),
-          ],
-        ),
-      ),
       body: Stack(
         children: <Widget>[
           // Replace this container with your Map widget
           Container(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-              child:GoogleMap(
-                mapType: MapType.hybrid,
-                initialCameraPosition: _sibulocation,
-                onMapCreated: (GoogleMapController controller) {
-                  _controller.complete(controller);
-                },
-                markers: Set.from(allMarkers),
-              ),
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            child: GoogleMap(
+              mapType: MapType.hybrid,
+              initialCameraPosition: _sibulocation,
+              onMapCreated: (GoogleMapController controller) {
+                _controller.complete(controller);
+              },
+              markers: Set.from(allMarkers),
             ),
+          ),
           Positioned(
             top: 10,
             right: 15,
@@ -158,7 +103,7 @@ class _MapDisplayState extends State<MapDisplay> {
             child: Container(
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius:  BorderRadius.circular(32),
+                borderRadius: BorderRadius.circular(32),
               ),
               child: Row(
                 children: <Widget>[
@@ -174,8 +119,7 @@ class _MapDisplayState extends State<MapDisplay> {
                       textInputAction: TextInputAction.go,
                       decoration: InputDecoration(
                           border: InputBorder.none,
-                          contentPadding:
-                          EdgeInsets.symmetric(horizontal: 15),
+                          contentPadding: EdgeInsets.symmetric(horizontal: 15),
                           hintText: "Search..."),
                     ),
                   ),
@@ -194,10 +138,10 @@ class _MapDisplayState extends State<MapDisplay> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: Text('Latitude: 2.2873  Longitude: 111.8305',
-                      style: TextStyle(fontSize: 18),
-                    )
-                  ),
+                      child: Text(
+                    'Latitude: 2.2873  Longitude: 111.8305',
+                    style: TextStyle(fontSize: 18),
+                  )),
                 ],
               ),
             ),
@@ -242,5 +186,6 @@ Future<Position> _determinePosition() async {
 
   // When we reach here, permissions are granted and we can
   // continue accessing the position of the device.
-  return await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high);
+  return await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.high);
 }
