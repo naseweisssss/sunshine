@@ -77,6 +77,14 @@ Connected with local e-commerce platforms, users can compare the prices from dif
 ## Appreciation
 Special Thanks to NASA Power API for supplying the data and making this possible!
 
+Sources of Dataset:
+NASA POWER Web Portal
+https://power.larc.nasa.gov/
+
+Monthly historical Dataset
+https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=QV2M,WS2M,TS,CLOUD_AMT&community=RE&longitude=111.8305&latitude=2.2873&format=JSON&start=2019&end=2020
+Parameters obtained:
+earth skin temperature, specific humidity at 2 meters, wind speed at 2 meters, cloud amount
 
 
 
