@@ -54,7 +54,7 @@ class _SettingsTwoPageState extends State<SettingsTwoPage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             BottomNavItem(
-              title: "Today",
+              title: "Home",
               svgScr: "icons/icons/homepage.svg",
               press: () {
                 Navigator.push(
@@ -65,30 +65,8 @@ class _SettingsTwoPageState extends State<SettingsTwoPage> {
               isActive: false,
             ),
             BottomNavItem(
-              title: "Data",
-              svgScr: "icons/icons/history.svg",
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HistoryData2()),
-                );
-              },
-              isActive: false,
-            ),
-            BottomNavItem(
-              title: "Map",
-              svgScr: "icons/icons/map.svg",
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MapDisplay()),
-                );
-              },
-              isActive: false,
-            ),
-            BottomNavItem(
-              title: "Today",
-              svgScr: "icons/icons/calendar.svg",
+              title: "Display",
+              svgScr: "icons/icons/laptop.svg",
               press: () {},
               isActive: false,
             ),

@@ -19,7 +19,6 @@ class CategoryCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Container(
-          margin: EdgeInsets.all(8.0),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(13),
@@ -41,7 +40,11 @@ class CategoryCard extends StatelessWidget {
                 child: Column(
                   children: [
                     Spacer(),
-                    SvgPicture.asset(svgSrc),
+                    SvgPicture.asset(
+                      svgSrc,
+                      height: 100,
+                      width: 100,
+                    ),
                     Spacer(),
                     Text(
                       title,
