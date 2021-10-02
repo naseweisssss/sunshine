@@ -19,6 +19,9 @@ A cross-platform application developed with flutter to keep track of solar power
 ### Log in Page
 <a href="http://www.feedbooks.com/"><img src="images/Loginpage.svg" width="500"/></a>
 <br>
+### Location Service (with Google Map!)
+<a href="http://www.feedbooks.com/"><img src="images/location.gif" width="500"/></a>
+<br>
 ### Solar Data Display
 This Historical Data Tracker includes an interactive page to adjust parameters to view the data. Thanks to NASA Power API, we are able to request the latest data for different parameters, so there is no need to update our database frequently
 ### Output Calculator
