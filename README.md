@@ -2,7 +2,9 @@
 
 A cross-platform application developed with flutter to keep track of solar power data, calculating electricity output and recommending solar panel 
 
-
+### Icon
+<a href="http://www.feedbooks.com/"><img src="imagesandgifs/1.svg" width="500"/></a>
+<br>
 
 <a href="http://www.feedbooks.com/"><img src="imagesandgifs/1.svg" width="500"/></a>
 <br>
