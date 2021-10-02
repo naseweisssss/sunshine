@@ -10,10 +10,10 @@ A cross-platform application developed with flutter to keep track of solar power
 <a href="http://www.feedbooks.com/"><img src="images/Page1.svg" width="500"/></a>
 <br>
 
-##What Does it do
-<a href="http://www.feedbooks.com/"><img src="imagesandgifs/2.svg" width="500"/></a>
+## Product Summary
+<a href="http://www.feedbooks.com/"><img src="images/Page 2.svg" width="500"/></a>
 <br>
-## Product Screenshots
+## Product Tour
 <a href="http://www.feedbooks.com/"><img src="imagesandgifs/3.svg" width="500"/></a>
 <br/><br/>
 
