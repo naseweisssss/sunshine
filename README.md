@@ -22,17 +22,17 @@ A cross-platform application developed with flutter to keep track of solar power
 <br>
 Log in with your Google or Facebook account to keep track of your solar data and sync across mutiple devices!
 ### Location Service (with Google Map!)
-<a href="http://www.feedbooks.com/"><img src="images/location.gif" width="500"/></a>
+<a href="http://www.feedbooks.com/"><img src="images/page5.gif" width="500"/></a>
 <br>
 
 ### Main Home Page
-<a href="http://www.feedbooks.com/"><img src="images/mainhomepage.gif" width="500"/></a>
+<a href="http://www.feedbooks.com/"><img src="images/page4.gif" width="500"/></a>
 <br>
 
 
 
 ## Features
-<a href="http://www.feedbooks.com/"><img src="images/3phones.gif" width="500"/></a>
+<a href="http://www.feedbooks.com/"><img src="images/page6.gif" width="500"/></a>
 <br>
 
 ### Solar Data Display
