@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sunshine/screen/dashboard/today.dart';
 import 'package:sunshine/screen/mainhomePage/Widgets/BottomNavItem.dart';
 import 'package:sunshine/screen/mainhomePage/mainhomePage.dart';
 
@@ -53,7 +54,7 @@ class _HistoryData2State extends State<HistoryData2> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             BottomNavItem(
-              title: "Home",
+              title: "Today",
               svgScr: "icons/icons/homepage.svg",
               press: () {
                 Navigator.push(
@@ -61,7 +62,7 @@ class _HistoryData2State extends State<HistoryData2> {
                   MaterialPageRoute(builder: (context) => mainhomePage()),
                 );
               },
-              isActive: true,
+              isActive: false,
             ),
             BottomNavItem(
               title: "Data",
@@ -75,9 +76,14 @@ class _HistoryData2State extends State<HistoryData2> {
               isActive: false,
             ),
             BottomNavItem(
-              title: "Today",
+              title: "Analytic",
               svgScr: "icons/icons/calendar.svg",
-              press: () {},
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LineChartPage()),
+                );
+              },
               isActive: false,
             ),
             BottomNavItem(
