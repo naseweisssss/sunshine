@@ -41,7 +41,10 @@ This Historical Data Tracker includes an interactive page to adjust parameters t
 This novel Solar power output calculator helps our homeowners to gauge and get amazed by how much energy solar power can save. Equipped with a simple algorithm, our calculator can compute the output of the solar panel on a particular period. By just inputting your location, we can calculate your electricity bills saved with your local rate!
 ### Solar Panel Recommendation
 Connected with local e-commerce platforms, users can compare the prices from different merchants and even get recommendations from our ends. 
-### Data Monitoring (Daily and Monthly)
+### Graph Data Monitoring (Daily and Monthly)
+
+<a href="http://www.feedbooks.com/"><img src="images/Untitled (Presentation).gif" width="500"/></a>
+<br>
 ### Settings
 <a href="http://www.feedbooks.com/"><img src="images/setting.gif" width="500"/></a>
 <br>
