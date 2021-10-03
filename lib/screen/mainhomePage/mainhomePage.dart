@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sunshine/data/data.dart';
+import 'package:sunshine/screen/dashboard/history_data2.dart';
 import 'package:sunshine/screen/dashboard/map_display.dart';
 import 'package:sunshine/screen/mainhomePage/solar_card.dart';
 import 'Widgets/category_card.dart';
@@ -37,8 +38,19 @@ class mainhomePage extends StatelessWidget {
               isActive: true,
             ),
             BottomNavItem(
-              title: "Display",
-              svgScr: "icons/icons/laptop.svg",
+              title: "Data",
+              svgScr: "icons/icons/history.svg",
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HistoryData2()),
+                );
+              },
+              isActive: false,
+            ),
+            BottomNavItem(
+              title: "Today",
+              svgScr: "icons/icons/calendar.svg",
               press: () {},
               isActive: false,
             ),
@@ -59,11 +71,26 @@ class mainhomePage extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Container(
-            height: size.height * .45,
+            height: size.height * 1,
             decoration: BoxDecoration(
-              color: Color(0xFFF5CEB8),
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                stops: [
+                  0.1,
+                  0.4,
+                  0.6,
+                  0.9,
+                ],
+                colors: [
+                  Colors.yellow.shade200,
+                  Colors.yellow.shade300,
+                  Colors.orange.shade300,
+                  Colors.redAccent.shade200,
+                ],
+              ),
               image: DecorationImage(
-                alignment: Alignment.centerLeft,
+                alignment: Alignment.topLeft,
                 image: AssetImage("images/undraw_pilates_gpdb.png"),
               ),
             ),
@@ -79,7 +106,7 @@ class mainhomePage extends StatelessWidget {
                     height: 52,
                     width: 52,
                     decoration: BoxDecoration(
-                      color: Color(0xFFF2BEA1),
+                      color: Color(0xFFEC8271),
                       shape: BoxShape.circle,
                     ),
                     child: SvgPicture.asset("icons/icons/menu.svg"),
@@ -208,13 +235,5 @@ class mainhomePage extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  Widget _buildSolarListView() {
-    return ListView.builder(
-        itemCount: solarData.length,
-        itemBuilder: (context, index) {
-          return SolarCard(solar: solarData[index]);
-        });
   }
 }

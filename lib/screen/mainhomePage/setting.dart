@@ -65,8 +65,19 @@ class _SettingsTwoPageState extends State<SettingsTwoPage> {
               isActive: false,
             ),
             BottomNavItem(
-              title: "Display",
-              svgScr: "icons/icons/laptop.svg",
+              title: "Data",
+              svgScr: "icons/icons/history.svg",
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => HistoryData2()),
+                );
+              },
+              isActive: false,
+            ),
+            BottomNavItem(
+              title: "Today",
+              svgScr: "icons/icons/calendar.svg",
               press: () {},
               isActive: false,
             ),
