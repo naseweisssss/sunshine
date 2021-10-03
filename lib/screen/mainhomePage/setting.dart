@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sunshine/constants.dart';
 import 'package:sunshine/screen/dashboard/history_data2.dart';
 import 'package:sunshine/screen/dashboard/map_display.dart';
+import 'package:sunshine/screen/dashboard/today.dart';
 import 'package:sunshine/screen/mainhomePage/mainhomePage.dart';
 import 'editprofile.dart';
 import 'Widgets/BottomNavItem.dart';
@@ -49,12 +50,12 @@ class _SettingsTwoPageState extends State<SettingsTwoPage> {
       bottomNavigationBar: Container(
         padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
         height: 56,
-        color: Colors.grey[200],
+        color: Colors.white,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             BottomNavItem(
-              title: "Home",
+              title: "Today",
               svgScr: "icons/icons/homepage.svg",
               press: () {
                 Navigator.push(
@@ -76,9 +77,14 @@ class _SettingsTwoPageState extends State<SettingsTwoPage> {
               isActive: false,
             ),
             BottomNavItem(
-              title: "Today",
+              title: "Analytic",
               svgScr: "icons/icons/calendar.svg",
-              press: () {},
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LineChartPage()),
+                );
+              },
               isActive: false,
             ),
             BottomNavItem(
@@ -90,7 +96,7 @@ class _SettingsTwoPageState extends State<SettingsTwoPage> {
                   MaterialPageRoute(builder: (context) => AccountScreen()),
                 );
               },
-              isActive: true,
+              isActive: false,
             ),
           ],
         ),

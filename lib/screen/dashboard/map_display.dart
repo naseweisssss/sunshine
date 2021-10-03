@@ -112,17 +112,6 @@ class _MapDisplayState extends State<MapDisplay> {
               isActive: false,
             ),
             BottomNavItem(
-              title: "Map",
-              svgScr: "icons/icons/map.svg",
-              press: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MapDisplay()),
-                );
-              },
-              isActive: true,
-            ),
-            BottomNavItem(
               title: "Analytic",
               svgScr: "icons/icons/calendar.svg",
               press: () {
