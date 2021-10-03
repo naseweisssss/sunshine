@@ -4,14 +4,20 @@ class Assets {
 
   static const String images3phones = 'images/3phones.gif';
   static const String imagesBackground = 'images/background.png';
+  static const String imagesGraphdisplaygif = 'images/graphdisplaygif.gif';
   static const String imagesLocation = 'images/location.gif';
   static const String imagesLoginbackground = 'images/loginbackground.png';
   static const String imagesLoginpage = 'images/Loginpage.svg';
   static const String imagesLogo = 'images/logo.png';
+  static const String imagesLogoSunshine = 'images/logo_sunshine.png';
   static const String imagesMainhomepage = 'images/mainhomepage.gif';
   static const String imagesMeditationBg = 'images/meditation_bg.png';
   static const String imagesPage1 = 'images/Page1.svg';
   static const String imagesPage2 = 'images/Page2.svg';
+  static const String imagesPage4 = 'images/page4.gif';
+  static const String imagesPage4gif = 'images/page4gif.svg';
+  static const String imagesPage5 = 'images/page5.gif';
+  static const String imagesPage6 = 'images/page6.gif';
   static const String imagesSUnSHine = 'images/SUnSHine.svg';
   static const String imagesSetting = 'images/setting.gif';
   static const String imagesSolarpanel1 = 'images/Solarpanel1.png';

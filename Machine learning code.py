@@ -10,7 +10,7 @@ sunshine = pd.read_csv('mlrfirsttrial.csv')
 print(sunshine)
 df = pd.DataFrame(sunshine)
 
-x = df[['T2M', 'T2MDEW', 'T2MWET', 'TS', 'QV2M',	'RH2M',	'PRECTOTCORR',	'PS',	'WS10M'	,'WS10M_MAX',	'WS10M_MIN',	'WS10M_RANGE',	'WS50M'	,'WS50M_MAX',	'WS50M_MIN'	,'WS50M_RANGE'
+x = df[['T2M', 'T2MDEW', 'T2MWET', 'TS', 'QV2M', 'RH2M',	'PRECTOTCORR',	'PS',	'WS10M'	,'WS10M_MAX',	'WS10M_MIN',	'WS10M_RANGE',	'WS50M'	,'WS50M_MAX',	'WS50M_MIN'	,'WS50M_RANGE'
 ]]
 
 y = df[['ALLSKY_SFC_SW_DWN']]
