@@ -6,6 +6,7 @@ import 'package:sunshine/screen/authentication/signup.dart';
 import 'package:sunshine/screen/dashboard/history_data.dart';
 import 'package:sunshine/screen/dashboard/history_data2.dart';
 import 'package:sunshine/screen/dashboard/map_display.dart';
+import 'package:sunshine/screen/dashboard/today.dart';
 import 'package:sunshine/screen/mainhomePage/mainhomePage.dart';
 
 import 'empty.dart';
@@ -17,6 +18,7 @@ const String mapDisplayRoute = "/dashboard/mapdisplay";
 const String mainhomepageRoute = "mainhomePage/mainhomePage.dart";
 const String historyRoute = "dashboard/historydata.dart";
 const String history2Route = "dashboard/historydata2.dart";
+const String LineChartRoute = "dashboard/today.dart";
 
 const kBackgroundColor = Color(0xFFF8F8F8);
 const kActiveIconColor = Color(0xFFE68342);
@@ -42,6 +44,8 @@ Route<dynamic> createRoute(settings) {
       return MaterialPageRoute(builder: (_) => HistoryData());
     case history2Route:
       return MaterialPageRoute(builder: (_) => HistoryData2());
+    case LineChartRoute:
+      return MaterialPageRoute(builder: (_) => LineChartPage());
     default:
       return MaterialPageRoute(
         builder: (context) => MainScreen(),

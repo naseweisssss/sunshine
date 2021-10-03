@@ -6,6 +6,7 @@ import 'package:geolocator/geolocator.dart';
 import 'dart:async';
 
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:sunshine/screen/dashboard/today.dart';
 import 'package:sunshine/screen/mainhomePage/Widgets/BottomNavItem.dart';
 import 'package:sunshine/screen/mainhomePage/mainhomePage.dart';
 import 'package:sunshine/screen/mainhomePage/setting.dart';
@@ -117,9 +118,14 @@ class _MapDisplayState extends State<MapDisplay> {
               isActive: true,
             ),
             BottomNavItem(
-              title: "Today",
+              title: "Analytic",
               svgScr: "icons/icons/calendar.svg",
-              press: () {},
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LineChartPage()),
+                );
+              },
               isActive: false,
             ),
             BottomNavItem(
