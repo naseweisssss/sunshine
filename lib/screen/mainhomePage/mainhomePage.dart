@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sunshine/data/data.dart';
+import 'package:sunshine/screen/dashboard/calculator.dart';
 import 'package:sunshine/screen/dashboard/history_data2.dart';
 import 'package:sunshine/screen/dashboard/map_display.dart';
 import 'package:sunshine/screen/dashboard/today.dart';
@@ -165,7 +166,13 @@ class mainhomePage extends StatelessWidget {
                         CategoryCard(
                           title: "Solar Calculator",
                           svgSrc: "icons/icons/calculator.svg",
-                          press: () {},
+                          press: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Calculator()),
+                            );
+                          },
                         ),
                       ],
                     ),

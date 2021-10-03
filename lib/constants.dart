@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sunshine/screen/authentication/home.dart';
 import 'package:sunshine/screen/authentication/login.dart';
 import 'package:sunshine/screen/authentication/signup.dart';
+import 'package:sunshine/screen/dashboard/calculator.dart';
 import 'package:sunshine/screen/dashboard/history_data.dart';
 import 'package:sunshine/screen/dashboard/history_data2.dart';
 import 'package:sunshine/screen/dashboard/map_display.dart';
@@ -19,6 +20,7 @@ const String mainhomepageRoute = "mainhomePage/mainhomePage.dart";
 const String historyRoute = "dashboard/historydata.dart";
 const String history2Route = "dashboard/historydata2.dart";
 const String LineChartRoute = "dashboard/today.dart";
+const String CalculatorRoute = "dashboard/calculator.dart";
 
 const kBackgroundColor = Color(0xFFF8F8F8);
 const kActiveIconColor = Color(0xFFE68342);
@@ -46,6 +48,8 @@ Route<dynamic> createRoute(settings) {
       return MaterialPageRoute(builder: (_) => HistoryData2());
     case LineChartRoute:
       return MaterialPageRoute(builder: (_) => LineChartPage());
+    case CalculatorRoute:
+      return MaterialPageRoute(builder: (_) => Calculator());
     default:
       return MaterialPageRoute(
         builder: (context) => MainScreen(),

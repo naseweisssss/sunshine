@@ -50,7 +50,7 @@ class _SettingsTwoPageState extends State<SettingsTwoPage> {
       bottomNavigationBar: Container(
         padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
         height: 56,
-        color: Colors.white,
+        color: Colors.grey.shade300,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
